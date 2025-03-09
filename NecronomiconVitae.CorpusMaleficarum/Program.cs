@@ -1,4 +1,21 @@
+using Azure.Identity;
+using Azure.Security.KeyVault.Secrets;
+using Azure.Storage.Blobs;
+using NecronomiconVitae.CorpusMaleficarum;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var configuration = builder.Configuration;
+
+var azureCredential = new DefaultAzureCredential();
+
+var keyVaultUrl = configuration["KeyVaultUri"];
+var secretClient = new SecretClient(new Uri(keyVaultUrl!), azureCredential);
+
+var storageConnectionString = secretClient.GetSecret("BlobConnectionString").Value.Value;
+
+builder.Services.AddTransient<IBlobStorageService, BlobStorageService>();
+builder.Services.AddSingleton(new BlobServiceClient(storageConnectionString));
 
 // Add services to the container.
 builder.Services.AddRazorPages();
