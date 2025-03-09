@@ -12,7 +12,7 @@ public class BlobStorageService(BlobServiceClient blobServiceClient) : IBlobStor
 {
     private readonly BlobServiceClient _blobServiceClient = blobServiceClient;
 
-    public async Task<string> GetJsonBlob()
+    public async Task<string> GetMetadataJson()
     {
         var containerClient = _blobServiceClient.GetBlobContainerClient(BlobStorage.ContainerName);
         var blobClient = containerClient.GetBlobClient(BlobStorage.MetadataPath);

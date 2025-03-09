@@ -2,9 +2,11 @@
 // Necronomicon Vitae
 // ------------------------------------
 
+using NecronomiconVitae.CorpusMaleficarum.Models;
+
 namespace NecronomiconVitae.CorpusMaleficarum;
 
-public interface IBlobStorageService
+public interface IProcessor
 {
-    Task<string> GetMetadataJson();
+    Task<IEnumerable<Image>> GetImages();
 }
