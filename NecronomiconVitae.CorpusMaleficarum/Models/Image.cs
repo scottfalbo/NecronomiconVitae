@@ -11,4 +11,6 @@ public class Image
     public string ImageType { get; set; } = string.Empty;
 
     public string ImageUrl { get; set; } = string.Empty;
+
+    public string ThumbnailUrl { get; set; } = string.Empty;
 }
