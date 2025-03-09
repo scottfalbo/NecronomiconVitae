@@ -8,5 +8,5 @@ namespace NecronomiconVitae.CorpusMaleficarum;
 
 public interface IProcessor
 {
-    Task<IEnumerable<Image>> GetImages();
+    Task<IEnumerable<Image>> GetImages(string imageType);
 }

@@ -11,12 +11,14 @@ public class Processor(IBlobStorageService blobStorageService) : IProcessor
 {
     private readonly IBlobStorageService _blobStorageService = blobStorageService;
 
-    public async Task<IEnumerable<Image>> GetImages()
+    public async Task<IEnumerable<Image>> GetImages(string imageType)
     {
         var metadataJson = await _blobStorageService.GetMetadataJson();
 
         var metadata = JsonSerializer.Deserialize<IEnumerable<Image>>(metadataJson) ?? [];
 
-        return metadata;
+        var filteredMetadata = metadata.Where(x => x.ImageType == imageType);
+
+        return filteredMetadata;
     }
 }
