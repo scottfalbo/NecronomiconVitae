@@ -5,6 +5,8 @@ VisualStudioVersion = 17.12.35728.132
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NecronomiconVitae.CorpusMaleficarum", "NecronomiconVitae.CorpusMaleficarum\NecronomiconVitae.CorpusMaleficarum.csproj", "{A3C42568-5C46-4BF9-999D-0D41DB76A27F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NecronomiconVitae.IncantationTrials", "NecronomiconVitae.IncantationTrials\NecronomiconVitae.IncantationTrials.csproj", "{3C00A287-4B66-410A-A72D-1E30CA1FEC70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A3C42568-5C46-4BF9-999D-0D41DB76A27F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3C42568-5C46-4BF9-999D-0D41DB76A27F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3C42568-5C46-4BF9-999D-0D41DB76A27F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C00A287-4B66-410A-A72D-1E30CA1FEC70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C00A287-4B66-410A-A72D-1E30CA1FEC70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C00A287-4B66-410A-A72D-1E30CA1FEC70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C00A287-4B66-410A-A72D-1E30CA1FEC70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
