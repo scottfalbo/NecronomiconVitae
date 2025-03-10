@@ -32,7 +32,7 @@ main {
         text-overflow: ellipsis;
     }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
     .top-row:not(.auth) {
         display: none;
     }
@@ -46,13 +46,13 @@ main {
     }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 992px) {
     .page {
         flex-direction: row;
     }
 
     .sidebar {
-        min-width: 320px;
+        min-width: 300px;
         height: 100vh;
         position: sticky;
         top: 0;
