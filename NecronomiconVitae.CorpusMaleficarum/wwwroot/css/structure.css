@@ -1,0 +1,46 @@
+/* Base Page Styling */
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    min-height: 100vh;
+}
+
+.sidebar {
+    background-image: var(--sidebar-bg);
+}
+
+.row {
+    background-color: var(--bg-color);
+}
+
+/* Sidebar (Hidden on Mobile) */
+.sidebar {
+    background-color: var(--sidebar-bg);
+    padding: 1rem;
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+    .page {
+        flex-direction: column;
+    }
+        
+    main {
+        padding: 1rem;
+    }
+}
+
+/* Desktop Layout */
+@media (min-width: 769px) {
+    .page {
+        flex-direction: row;
+    }
+
+    .sidebar {
+        display: block;
+    }
+}
