@@ -20,11 +20,6 @@ main {
     gap: 1rem;
 }
 
-.sidebar {
-    background-color: var(--sidebar-bg);
-    padding: 1rem;
-}
-
 footer {
     text-align: center;
     padding: 1rem;
@@ -89,5 +84,4 @@ footer {
 .main-grid-section {
     padding: 1rem;
     border: 1px solid var(--text-color);
-    text-align: center;
 }

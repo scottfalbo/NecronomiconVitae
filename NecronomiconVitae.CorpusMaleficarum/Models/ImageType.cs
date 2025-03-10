@@ -7,5 +7,5 @@ namespace NecronomiconVitae.CorpusMaleficarum.Models;
 public enum ImageType
 {
     Illustration,
-    Tattoo
+    FleshRite
 }
