@@ -21,7 +21,6 @@ main {
 }
 
 .sidebar {
-    width: 250px;
     background-color: var(--sidebar-bg);
     padding: 1rem;
 }
@@ -61,7 +60,6 @@ footer {
 
     .sidebar {
         display: block;
-        width: 250px;
     }
 
     .content-container {
@@ -72,11 +70,24 @@ footer {
 
     .parent-container {
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .section-1 {
+        grid-column: span 2;
+    }
+
+    .section-2 {
+        grid-column: 3;
+    }
+
+    .section-3 {
+        grid-column: 1 / span 3;
     }
 }
 
 .main-grid-section {
     padding: 1rem;
+    border: 1px solid var(--text-color);
     text-align: center;
 }
