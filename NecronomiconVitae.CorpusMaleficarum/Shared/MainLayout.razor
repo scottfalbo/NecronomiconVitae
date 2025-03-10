@@ -6,16 +6,23 @@
 <PageTitle>NecronomiconVitae.CorpusMaleficarum</PageTitle>
 
 <div class="page @ThemeService.CurrentTheme.ToString().ToLower()">
+    <!-- Sidebar -->
     <div class="sidebar">
         <NavMenu />
-        <NecronomiconVitae.CorpusMaleficarum.Pages.Components.ThemeToggle />
     </div>
 
-    <main>
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
+    <!-- Main Content & Footer Wrapper -->
+    <div class="content-container">
+        <main>
+            <article class="content px-4">
+                @Body
+            </article>
+        </main>
+        <footer>
+            <p>hi, I'm a footer</p>
+            <NecronomiconVitae.CorpusMaleficarum.Pages.Components.ThemeToggle />
+        </footer>
+    </div>
 </div>
 
 @code {

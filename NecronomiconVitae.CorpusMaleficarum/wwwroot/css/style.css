@@ -1,0 +1,7 @@
+.sidebar {
+    background-image: var(--sidebar-bg);
+}
+
+.row {
+    background-color: var(--bg-color);
+}

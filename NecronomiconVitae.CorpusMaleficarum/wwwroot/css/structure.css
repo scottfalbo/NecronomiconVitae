@@ -1,26 +1,36 @@
-/* Base Page Styling */
+main {
+    flex-grow: 1;
+    padding: 1rem;
+}
+
 .page {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-main {
-    min-height: 100vh;
+.content-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+}
+
+.parent-container {
+    display: grid;
+    gap: 1rem;
 }
 
 .sidebar {
-    background-image: var(--sidebar-bg);
-}
-
-.row {
-    background-color: var(--bg-color);
-}
-
-/* Sidebar (Hidden on Mobile) */
-.sidebar {
+    width: 250px;
     background-color: var(--sidebar-bg);
     padding: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 /* Mobile Layout */
@@ -28,9 +38,18 @@ main {
     .page {
         flex-direction: column;
     }
-        
-    main {
-        padding: 1rem;
+    
+    .sidebar {
+        width: 100%;
+    }
+
+    .content-container {
+        flex-grow: 1;
+    }
+    
+    .parent-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
     }
 }
 
@@ -42,5 +61,22 @@ main {
 
     .sidebar {
         display: block;
+        width: 250px;
     }
+
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .parent-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+.main-grid-section {
+    padding: 1rem;
+    text-align: center;
 }
