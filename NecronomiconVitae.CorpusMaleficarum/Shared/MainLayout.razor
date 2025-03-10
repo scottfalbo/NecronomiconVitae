@@ -4,7 +4,7 @@
 
 <PageTitle>NecronomiconVitae.CorpusMaleficarum</PageTitle>
 
-<div class="page @ThemeService.CurrentTheme">
+<div class="page @ThemeService.CurrentTheme.ToString().ToLower()">
     <div class="sidebar">
         <NavMenu />
         <NecronomiconVitae.CorpusMaleficarum.Pages.Components.ThemeToggle />
@@ -20,11 +20,16 @@
 @code {
     protected override void OnInitialized()
     {
-        ThemeService.OnThemeChanged += StateHasChanged;
+        ThemeService.OnThemeChanged += HandleThemeChanged;
+    }
+
+    private void HandleThemeChanged()
+    {
+        InvokeAsync(StateHasChanged);
     }
 
     public void Dispose()
     {
-        ThemeService.OnThemeChanged -= StateHasChanged;
+        ThemeService.OnThemeChanged -= HandleThemeChanged;
     }
 }

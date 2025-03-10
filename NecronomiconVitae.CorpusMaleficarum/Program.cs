@@ -14,9 +14,9 @@ var secretClient = new SecretClient(new Uri(keyVaultUrl!), azureCredential);
 
 var storageConnectionString = secretClient.GetSecret("BlobConnectionString").Value.Value;
 
-builder.Services.AddTransient<IBlobStorageService, BlobStorageService>();
+builder.Services.AddSingleton<IBlobStorageService, BlobStorageService>();
 builder.Services.AddTransient<IProcessor, Processor>();
-builder.Services.AddTransient<IThemeService, ThemeService>();
+builder.Services.AddSingleton<IThemeService, ThemeService>();
 builder.Services.AddSingleton(new BlobServiceClient(storageConnectionString));
 
 // Add services to the container.

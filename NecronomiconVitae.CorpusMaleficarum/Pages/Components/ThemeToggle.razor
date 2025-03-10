@@ -2,7 +2,7 @@
 
 @inject IThemeService ThemeService
 
-<select @bind="SelectedTheme" @bind:event="onchange">
+<select @bind="SelectedTheme">
     @foreach (var theme in ThemeService.AvailableThemes)
     {
         <option value="@theme">@theme.ToString()</option>
@@ -10,11 +10,24 @@
 </select>
 
 @code {
-    private Theme SelectedTheme;
+    private Theme _selectedTheme;
+
+    private Theme SelectedTheme
+    {
+        get => _selectedTheme;
+        set
+        {
+            if (_selectedTheme != value)
+            {
+                _selectedTheme = value;
+                _ = OnThemeChanged();
+            }
+        }
+    }
 
     protected override void OnInitialized()
     {
-        SelectedTheme = ThemeService.CurrentTheme;
+        _selectedTheme = ThemeService.CurrentTheme;
     }
 
     private async Task OnThemeChanged()
