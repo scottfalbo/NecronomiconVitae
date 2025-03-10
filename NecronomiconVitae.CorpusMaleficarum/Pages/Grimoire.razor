@@ -1,3 +1,13 @@
 ﻿@page "/grimoire/{imageType}"
 
+@using NecronomiconVitae.CorpusMaleficarum.Models
+
 <h3>Grimoire</h3>
+
+@if (Images.Any())
+{
+    foreach (var image in Images[ImageTag.Image.ToString()])
+    {
+        <img src="@image.ImageUrl" />
+    }
+}
