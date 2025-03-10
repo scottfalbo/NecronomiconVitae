@@ -1,6 +1,7 @@
 ﻿@inherits LayoutComponentBase
 
 @inject IThemeService ThemeService
+@inject IJSRuntime JSRuntime
 
 <PageTitle>NecronomiconVitae.CorpusMaleficarum</PageTitle>
 
@@ -18,6 +19,15 @@
 </div>
 
 @code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await ThemeService.InitializeThemeAsync(JSRuntime);
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
     protected override void OnInitialized()
     {
         ThemeService.OnThemeChanged += HandleThemeChanged;

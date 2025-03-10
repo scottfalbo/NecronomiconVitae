@@ -15,11 +15,25 @@ public class ThemeService : IThemeService
 
     public Theme CurrentTheme => _currentTheme;
 
+    public async Task InitializeThemeAsync(IJSRuntime jsRuntime)
+    {
+        var storedTheme = await jsRuntime.InvokeAsync<string>("localStorage.getItem", "selectedTheme");
+
+        if (!string.IsNullOrEmpty(storedTheme) && Enum.TryParse(storedTheme, out Theme loadedTheme))
+        {
+            _currentTheme = loadedTheme;
+            OnThemeChanged?.Invoke();
+        }
+    }
+
     public async Task SetThemeAsync(Theme theme, IJSRuntime jsRuntime)
     {
-        _currentTheme = theme;
-        await jsRuntime.InvokeVoidAsync("localStorage.setItem", "selectedTheme", theme.ToString());
-        OnThemeChanged?.Invoke();
+        if (theme != _currentTheme)
+        {
+            _currentTheme = theme;
+            await jsRuntime.InvokeVoidAsync("localStorage.setItem", "selectedTheme", theme.ToString());
+            OnThemeChanged?.Invoke();
+        }
     }
 
     public event Action? OnThemeChanged;

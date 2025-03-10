@@ -11,6 +11,8 @@
 </select>
 
 @code {
+    private bool _isInitialized = false;
+
     private Theme _selectedTheme;
 
     private Theme SelectedTheme
@@ -29,6 +31,17 @@
     protected override void OnInitialized()
     {
         _selectedTheme = ThemeService.CurrentTheme;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender && !_isInitialized)
+        {
+            _isInitialized = true;
+            await ThemeService.InitializeThemeAsync(JSRuntime);
+            _selectedTheme = ThemeService.CurrentTheme;
+            StateHasChanged();
+        }
     }
 
     private async Task OnThemeChanged()
