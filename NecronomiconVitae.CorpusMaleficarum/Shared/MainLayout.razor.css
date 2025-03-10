@@ -19,7 +19,7 @@ main {
     justify-content: flex-end;
     height: 3.5rem;
     display: flex;
-    align-items: center;
+    align-items: start;
 }
 
     .top-row ::deep a, .top-row .btn-link {
@@ -52,7 +52,7 @@ main {
     }
 
     .sidebar {
-        min-width: 300px;
+        min-width: 260px;
         height: 100vh;
         position: sticky;
         top: 0;
