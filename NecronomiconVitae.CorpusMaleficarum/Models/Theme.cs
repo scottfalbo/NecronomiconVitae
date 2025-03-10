@@ -8,18 +8,18 @@ namespace NecronomiconVitae.CorpusMaleficarum.Models;
 
 public enum Theme
 {
-    [JsonPropertyName("console")]
-    Console,
+    //[JsonPropertyName("console")]
+    //Console,
 
     [JsonPropertyName("dark")]
-    Dark,
+    Dark
 
-    [JsonPropertyName("light")]
-    Light,
+    //[JsonPropertyName("light")]
+    //Light,
 
-    [JsonPropertyName("occult")]
-    Occult,
+    //[JsonPropertyName("occult")]
+    //Occult,
 
-    [JsonPropertyName("retro")]
-    Retro
+    //[JsonPropertyName("retro")]
+    //Retro
 }

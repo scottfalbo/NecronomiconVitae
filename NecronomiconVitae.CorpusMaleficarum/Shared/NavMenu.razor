@@ -2,7 +2,7 @@
 
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">NecronomiconVitae.Corpus Maleficarum</a>
+        <a class="navbar-brand" href="">Necronomicon Vitae</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -11,26 +11,28 @@
 
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
     <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="@($"grimoire/{ImageType.Illustration.ToString()}")" Match="NavLinkMatch.All">
-                <span class="oi" aria-hidden="true"></span> Forgotten Parchments
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="@($"grimoire/{ImageType.Tattoo.ToString()}")" Match="NavLinkMatch.All">
-                <span class="oi" aria-hidden="true"></span> Flesh Rites
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="scribestestament" Match="NavLinkMatch.All">
-                <span class="oi" aria-hidden="true"></span> Scribes Testament
-            </NavLink>
-        </div>
+        <ul>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                    <span class="oi oi-home" aria-hidden="true"></span> Home
+                </NavLink>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="@($"grimoire/{ImageType.Illustration.ToString()}")" Match="NavLinkMatch.All">
+                    <span class="oi" aria-hidden="true"></span> Forgotten Parchments
+                </NavLink>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="@($"grimoire/{ImageType.Tattoo.ToString()}")" Match="NavLinkMatch.All">
+                    <span class="oi" aria-hidden="true"></span> Flesh Rites
+                </NavLink>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="scribestestament" Match="NavLinkMatch.All">
+                    <span class="oi" aria-hidden="true"></span> Scribes Testament
+                </NavLink>
+            </li>
+        </ul>
     </nav>
 </div>
 
