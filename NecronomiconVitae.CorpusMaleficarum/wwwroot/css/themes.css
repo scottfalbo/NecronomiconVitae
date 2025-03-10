@@ -1,0 +1,32 @@
+.light {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+}
+
+.dark {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+}
+
+.console {
+    --bg-color: #000000;
+    --text-color: #00ff00;
+    font-family: "Courier New", monospace;
+}
+
+.occult {
+    --bg-color: #1e1b29;
+    --text-color: #ffcc00;
+    font-family: "Cloister Black", fantasy;
+}
+
+.retro {
+    --bg-color: #f4a261;
+    --text-color: #264653;
+    font-family: "Press Start 2P", cursive;
+}
+
+html, body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}

@@ -16,6 +16,7 @@ var storageConnectionString = secretClient.GetSecret("BlobConnectionString").Val
 
 builder.Services.AddTransient<IBlobStorageService, BlobStorageService>();
 builder.Services.AddTransient<IProcessor, Processor>();
+builder.Services.AddTransient<IThemeService, ThemeService>();
 builder.Services.AddSingleton(new BlobServiceClient(storageConnectionString));
 
 // Add services to the container.

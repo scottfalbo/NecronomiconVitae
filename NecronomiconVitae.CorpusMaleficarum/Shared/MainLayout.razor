@@ -1,10 +1,13 @@
 ﻿@inherits LayoutComponentBase
 
+@inject IThemeService ThemeService
+
 <PageTitle>NecronomiconVitae.CorpusMaleficarum</PageTitle>
 
-<div class="page">
+<div class="page @ThemeService.CurrentTheme">
     <div class="sidebar">
         <NavMenu />
+        <NecronomiconVitae.CorpusMaleficarum.Pages.Components.ThemeToggle />
     </div>
 
     <main>
@@ -13,3 +16,15 @@
         </article>
     </main>
 </div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        ThemeService.OnThemeChanged += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        ThemeService.OnThemeChanged -= StateHasChanged;
+    }
+}

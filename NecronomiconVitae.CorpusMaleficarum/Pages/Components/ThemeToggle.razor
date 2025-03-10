@@ -1,0 +1,24 @@
+﻿@using NecronomiconVitae.CorpusMaleficarum.Models
+
+@inject IThemeService ThemeService
+
+<select @bind="SelectedTheme" @bind:event="onchange">
+    @foreach (var theme in ThemeService.AvailableThemes)
+    {
+        <option value="@theme">@theme.ToString()</option>
+    }
+</select>
+
+@code {
+    private Theme SelectedTheme;
+
+    protected override void OnInitialized()
+    {
+        SelectedTheme = ThemeService.CurrentTheme;
+    }
+
+    private async Task OnThemeChanged()
+    {
+        await ThemeService.SetThemeAsync(SelectedTheme);
+    }
+}
