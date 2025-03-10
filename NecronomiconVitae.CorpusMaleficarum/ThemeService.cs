@@ -2,6 +2,7 @@
 // Necronomicon Vitae
 // ------------------------------------
 
+using Microsoft.JSInterop;
 using NecronomiconVitae.CorpusMaleficarum.Models;
 
 namespace NecronomiconVitae.CorpusMaleficarum;
@@ -14,12 +15,11 @@ public class ThemeService : IThemeService
 
     public Theme CurrentTheme => _currentTheme;
 
-    public Task SetThemeAsync(Theme theme)
+    public async Task SetThemeAsync(Theme theme, IJSRuntime jsRuntime)
     {
         _currentTheme = theme;
+        await jsRuntime.InvokeVoidAsync("localStorage.setItem", "selectedTheme", theme.ToString());
         OnThemeChanged?.Invoke();
-
-        return Task.CompletedTask;
     }
 
     public event Action? OnThemeChanged;

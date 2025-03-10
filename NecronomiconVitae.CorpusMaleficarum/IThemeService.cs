@@ -2,6 +2,7 @@
 // Necronomicon Vitae
 // ------------------------------------
 
+using Microsoft.JSInterop;
 using NecronomiconVitae.CorpusMaleficarum.Models;
 
 namespace NecronomiconVitae.CorpusMaleficarum;
@@ -12,7 +13,7 @@ public interface IThemeService
 
     Theme CurrentTheme { get; }
 
-    Task SetThemeAsync(Theme theme);
+    Task SetThemeAsync(Theme theme, IJSRuntime jsRuntime);
 
     event Action? OnThemeChanged;
 }

@@ -1,6 +1,7 @@
 ﻿@using NecronomiconVitae.CorpusMaleficarum.Models
 
 @inject IThemeService ThemeService
+@inject IJSRuntime JSRuntime
 
 <select @bind="SelectedTheme">
     @foreach (var theme in ThemeService.AvailableThemes)
@@ -32,6 +33,6 @@
 
     private async Task OnThemeChanged()
     {
-        await ThemeService.SetThemeAsync(SelectedTheme);
+        await ThemeService.SetThemeAsync(SelectedTheme, JSRuntime);
     }
 }
